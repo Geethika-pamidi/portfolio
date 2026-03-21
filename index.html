@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pamidi Geethika | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --text-main: #0f172a;
+            --border: rgba(15, 23, 42, 0.1);
+            --accent: #2563eb;
+        }
+
+        .dark {
+            --bg: #010103;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text-main: #f1f5f9;
+            --border: rgba(255, 255, 255, 0.1);
+            --accent: #3b82f6;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text-main); 
+            transition: background-color 0.4s ease, color 0.4s ease;
+            margin: 0;
+        }
+
+        .font-header { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass { background: var(--card-bg); backdrop-filter: blur(12px); border: 1px solid var(--border); }
+        .gradient-text { background: linear-gradient(135deg, #2563eb, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-primary { background: linear-gradient(135deg, #2563eb, #7c3aed); color: white; }
+
+        /* Icon Toggle Logic */
+        #sun-icon { display: none; }
+        #moon-icon { display: block; }
+        .dark #sun-icon { display: block; }
+        .dark #moon-icon { display: none; }
+
+        .timeline-dot { position: absolute; left: -9px; top: 24px; width: 18px; height: 18px; border-radius: 50%; border: 3px solid var(--accent); background: var(--bg); z-index: 10; }
+    </style>
+</head>
+<body class="relative">
+
+    <nav class="fixed top-0 w-full z-50 glass py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-xl font-extrabold font-header tracking-tighter uppercase text-slate-900 dark:text-white">
+            GEETHIKA<span class="text-blue-600">.</span>
+        </div>
+        
+        <div class="hidden lg:flex items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+            <a href="#Home" class="hover:text-blue-600 transition">Home</a>
+            <a href="#about" class="hover:text-blue-600 transition">About</a>
+            <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+            <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+            <a href="#certificates" class="hover:text-blue-600 transition">Certificates</a>
+            <a href="#achievements" class="hover:text-blue-600 transition">Achievements</a>
+            <a href="#education" class="hover:text-blue-600 transition">Education</a>
+            <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <button id="themeToggle" class="glass p-2.5 rounded-full hover:border-blue-500 transition focus:outline-none">
+                <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+                <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-500"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+            </button>
+            <a href="#contact" class="btn-primary px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition hover:scale-105 shadow-lg shadow-blue-500/20">Hire Me</a>
+        </div>
+    </nav>
+
+    <section id="Home" class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h1 class="text-5xl md:text-7xl font-extrabold font-header tracking-tight mb-4 leading-tight text-slate-900 dark:text-white">
+                    Pamidi Lakshmi <br><span class="gradient-text">Geethika</span>
+                </h1>
+                <div class="h-10 mb-6 flex items-center">
+                    <span id="typewriter" class="text-2xl font-bold text-slate-500 border-r-4 border-blue-600 pr-2"></span>
+                </div>
+                <p class="text-lg text-slate-500 mb-10 max-w-lg leading-relaxed font-medium">
+                    Data Scientist and ML Engineer focused on building intelligent, data-driven solutions and scalable applications.
+                </p>
+                
+                <div class="flex flex-wrap gap-5 items-center">
+                    <a href="Resume.pdf" class="btn-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 text-xs uppercase tracking-widest">Download CV</a>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/Geethika-pamidi" target="_blank" class="glass p-4 rounded-xl text-slate-900 dark:text-white hover:text-blue-500 transition">
+                            <i data-lucide="github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/pamidi-geethika34" target="_blank" class="glass p-4 rounded-xl text-slate-900 dark:text-white hover:text-blue-500 transition">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-blue-500/10 rounded-[40px] blur-2xl"></div>
+                    <img src="profile.jpeg" alt="Geethika" class="relative z-10 w-72 h-72 md:w-96 md:h-96 object-cover rounded-[40px] border border-slate-200 dark:border-white/10 shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-24 px-6 flex items-center justify-center border-t border-slate-200 dark:border-white/5">
+    <div class="max-w-7xl mx-auto w-full">
+        
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold font-header uppercase tracking-tighter text-slate-900 dark:text-white">
+                About <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Me</span>
+            </h2>
+            <div class="h-1.5 w-20 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+            <div class="glass p-8 md:p-14 rounded-[3rem] border border-slate-200 dark:border-white/10 relative overflow-hidden group">
+                <div class="absolute -right-24 -top-24 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px] group-hover:bg-blue-600/20 transition-all duration-700"></div>
+                
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-4">
+                        <p class="text-[10px] font-black text-blue-600 uppercase tracking-[0.3em] mb-4">The Hybrid Engineer</p>
+                        <h3 class="text-3xl font-black font-header text-slate-900 dark:text-white leading-tight">
+                            Building the <br>Future with <br><span class="text-purple-600">Data</span>
+                        </h3>
+                    </div>
+
+                    <div class="lg:col-span-8 space-y-6 text-slate-600 dark:text-slate-400 text-lg leading-relaxed font-medium">
+                        <p>
+                            I have a strong foundation in <span class="text-slate-900 dark:text-white font-bold underline decoration-blue-500/30 decoration-4 underline-offset-4">Data Science</span>, with hands-on experience using <span class="text-blue-600 font-bold">SQL, Excel, and PowerBI</span> to solve complex business problems.
+                        </p>
+                        <p>
+                            Currently, I am expanding my impact by developing <span class="text-slate-900 dark:text-white font-bold">Full-Stack projects</span> that integrate my Machine Learning models into end-to-end applications. 
+                        </p>
+                        <p class="text-slate-900 dark:text-white font-bold italic border-l-4 border-purple-600 pl-6 py-2 bg-purple-600/5 rounded-r-xl">
+                            "I bridge the gap between data-heavy analytics and user-centric software engineering."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+<section id="skills">
+    </section>
+    <section id="skills" class="py-24 px-6 max-w-7xl mx-auto border-t border-slate-200 dark:border-white/5">
+    <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold font-header uppercase tracking-tighter text-slate-900 dark:text-white">
+            Technical <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Arsenal</span>
+        </h2>
+        <div class="h-1.5 w-20 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="glass p-8 rounded-[2rem] hover:border-blue-500/50 transition-all duration-500 group border border-transparent">
+            <div class="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-lg">
+                <i data-lucide="terminal" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-4">Programming</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-blue-600/5 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-lg text-[10px] font-bold uppercase border border-blue-600/10 transition-colors group-hover:bg-blue-600/10 hover:scale-105">C++</span>
+                <span class="bg-blue-600/5 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-lg text-[10px] font-bold uppercase border border-blue-600/10 transition-colors group-hover:bg-blue-600/10 hover:scale-105">Python</span>
+                <span class="bg-blue-600/5 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-lg text-[10px] font-bold uppercase border border-blue-600/10 transition-colors group-hover:bg-blue-600/10 hover:scale-105">DSA</span>
+                <span class="bg-blue-600/5 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-lg text-[10px] font-bold uppercase border border-blue-600/10 transition-colors group-hover:bg-blue-600/10 hover:scale-105">Python Libraries(Numpy, Pandas, Matplotlib, Seaborn, scikit-learn, SciPy)</span>
+
+            </div>
+        </div>
+
+        <div class="glass p-8 rounded-[2rem] hover:border-orange-500/50 transition-all duration-500 group border border-transparent">
+            <div class="w-12 h-12 bg-orange-500/10 rounded-2xl flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500 shadow-lg">
+                <i data-lucide="globe" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-4">Web Technologies</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-orange-600/5 text-orange-600 dark:text-orange-400 px-3 py-1 rounded-lg text-[10px] font-bold uppercase border border-orange-600/10 hover:scale-105 transition-transform">HTML/CSS</span>
+                <span class="bg-orange-600/5 text-orange-600 dark:text-orange-400 px-3 py-1 rounded-lg text-[10px] font-bold uppercase border border-orange-600/10 hover:scale-105 transition-transform">JS</span>
+                <span class="bg-orange-600/5 text-orange-600 dark:text-orange-400 px-3 py-1 rounded-lg text-[10px] font-bold uppercase border border-orange-600/10 hover:scale-105 transition-transform">Bootstrap</span>
+            </div>
+        </div>
+
+        <div class="glass p-8 rounded-[2rem] hover:border-red-500/50 transition-all duration-500 group border border-transparent">
+            <div class="w-12 h-12 bg-red-500/10 rounded-2xl flex items-center justify-center text-red-600 mb-6 group-hover:bg-red-600 group-hover:text-white transition-all duration-500 shadow-lg">
+                <i data-lucide="database" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-4">CS Fundamentals</h3>
+            <div class="grid grid-cols-2 gap-2">
+                <span class="bg-red-600/5 text-red-600 dark:text-red-400 px-2 py-1.5 rounded-lg text-[9px] font-bold uppercase border border-red-600/10 text-center">SQL</span>
+                <span class="bg-red-600/5 text-red-600 dark:text-red-400 px-2 py-1.5 rounded-lg text-[9px] font-bold uppercase border border-red-600/10 text-center">DBMS</span>
+                <span class="bg-red-600/5 text-red-600 dark:text-red-400 px-2 py-1.5 rounded-lg text-[9px] font-bold uppercase border border-red-600/10 text-center">Operating Systems</span>
+                <span class="bg-red-600/5 text-red-600 dark:text-red-400 px-2 py-1.5 rounded-lg text-[9px] font-bold uppercase border border-red-600/10 text-center">Computer Networking</span>
+            </div>
+        </div>
+
+        <div class="glass p-8 rounded-[2rem] hover:border-purple-500/50 transition-all duration-500 group border border-transparent lg:col-span-2">
+            <div class="flex items-center gap-6 mb-6">
+                <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-all duration-500 shadow-lg">
+                    <i data-lucide="brain-circuit" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-sm font-black uppercase tracking-[0.2em] text-slate-400">ML Models</h3>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-slate-50 dark:bg-white/5 p-4 rounded-2xl border border-slate-100 dark:border-white/5">
+                    <p class="text-[9px] font-black text-purple-600 uppercase mb-2 tracking-widest">Supervised</p>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">Regression,K-Nearest Neighbors, Decision Tree, Random Forest,Naive Bayes,SVM</p>
+                </div>
+                <div class="bg-slate-50 dark:bg-white/5 p-4 rounded-2xl border border-slate-100 dark:border-white/5">
+                    <p class="text-[9px] font-black text-purple-600 uppercase mb-2 tracking-widest">Unsupervised</p>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">k-Means Clustering, PCA, Association Rules,Neural Networks</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass p-8 rounded-[2rem] hover:border-yellow-500/50 transition-all duration-500 group border border-transparent">
+            <div class="w-12 h-12 bg-yellow-500/10 rounded-2xl flex items-center justify-center text-yellow-600 mb-6 group-hover:bg-yellow-600 group-hover:text-white transition-all duration-500 shadow-lg">
+                <i data-lucide="wrench" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-4">Tools</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-yellow-600/5 text-yellow-700 dark:text-yellow-400 px-3 py-1 rounded-lg text-[10px] font-bold uppercase border border-yellow-600/10">Git</span>
+                <span class="bg-yellow-600/5 text-yellow-700 dark:text-yellow-400 px-3 py-1 rounded-lg text-[10px] font-bold uppercase border border-yellow-600/10">Power BI</span>
+                <span class="bg-yellow-600/5 text-yellow-700 dark:text-yellow-400 px-3 py-1 rounded-lg text-[10px] font-bold uppercase border border-yellow-600/10">Excel</span>
+            </div>
+        </div>
+
+        <div class="glass p-8 rounded-[2rem] hover:border-pink-500/50 transition-all duration-500 group border border-transparent lg:col-span-3">
+            <div class="flex items-center gap-6 mb-8">
+                <div class="w-14 h-14 bg-pink-500/10 rounded-2xl flex items-center justify-center text-pink-600 group-hover:bg-pink-600 group-hover:text-white transition-all duration-500 shadow-lg">
+                    <i data-lucide="sparkles" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-sm font-black uppercase tracking-[0.2em] text-slate-400">Professional Soft Skills</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="flex flex-col items-center p-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 hover:bg-pink-500/10 transition-colors">
+                    <i data-lucide="clock" class="w-5 h-5 text-pink-500 mb-2"></i>
+                    <p class="text-[9px] font-black uppercase text-slate-700 dark:text-slate-300">Time Management</p>
+                </div>
+                <div class="flex flex-col items-center p-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 hover:bg-pink-500/10 transition-colors">
+                    <i data-lucide="message-circle" class="w-5 h-5 text-pink-500 mb-2"></i>
+                    <p class="text-[9px] font-black uppercase text-slate-700 dark:text-slate-300">Communication</p>
+                </div>
+                <div class="flex flex-col items-center p-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 hover:bg-pink-500/10 transition-colors">
+                    <i data-lucide="puzzle" class="w-5 h-5 text-pink-500 mb-2"></i>
+                    <p class="text-[9px] font-black uppercase text-slate-700 dark:text-slate-300">Problem Solving</p>
+                </div>
+                <div class="flex flex-col items-center p-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 hover:bg-pink-500/10 transition-colors">
+                    <i data-lucide="zap" class="w-5 h-5 text-pink-500 mb-2"></i>
+                    <p class="text-[9px] font-black uppercase text-slate-700 dark:text-slate-300">Adaptability</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Typewriter Effect
+        const text = "ML Engineer & Data Scientist";
+        const typewriter = document.getElementById('typewriter');
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                typewriter.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, 100);
+            }
+        }
+        type();
+    </script>
+</body>
+    <section id="projects" class="py-24 px-6 max-w-7xl mx-auto border-t border-slate-200 dark:border-white/5">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold font-header uppercase tracking-tighter text-slate-900 dark:text-white">
+                Featured <span class="text-blue-600">Projects</span>
+            </h2>
+            <div class="h-1.5 w-20 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="glass rounded-[2.5rem] overflow-hidden group flex flex-col h-full hover:border-blue-500/50 transition-all duration-500">
+                <div class="h-52 overflow-hidden relative">
+                    <img src="flight.png" alt="Flight Delay Analysis" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <span class="text-white text-xs font-bold uppercase tracking-widest">Data Analytics</span>
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-3 font-header text-slate-900 dark:text-white uppercase tracking-tight">Flight Delay and Cancellation Analysis</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed flex-grow">Processed 300k+ flight records using SQL and Power BI to visualize operational bottlenecks and delay patterns.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="flex gap-2">
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">Power BI</span>
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">Power Query</span>
+                            
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">Data Modeling (Star Schema)</span>
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">SQL</span>
+                        </div>
+                        <a href="https://github.com/Geethika-pamidi" target="_blank" class="text-slate-900 dark:text-white hover:text-blue-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass rounded-[2.5rem] overflow-hidden group flex flex-col h-full hover:border-blue-500/50 transition-all duration-500">
+                <div class="h-52 overflow-hidden relative">
+                    <img src="ml.jpg" alt="Credit Risk" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <span class="text-white text-xs font-bold uppercase tracking-widest">Machine Learning</span>
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-3 font-header text-slate-900 dark:text-white uppercase tracking-tight">Credit Risk System</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed flex-grow">ML-driven loan approval system achieving 88.7% accuracy using Support Vector Machines and Scikit-Learn.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="flex gap-2">
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">Python</span>
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">Logistic Regression</span>
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">KNN,SVM,DECISION TREE,Random Forest</span>
+                        </div>
+                        <a href="https://github.com/Geethika-pamidi" target="_blank" class="text-slate-900 dark:text-white hover:text-blue-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass rounded-[2.5rem] overflow-hidden group flex flex-col h-full hover:border-blue-500/50 transition-all duration-500">
+                <div class="h-52 overflow-hidden relative">
+                    <img src="pollution.png" alt="Air Pollution" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <span class="text-white text-xs font-bold uppercase tracking-widest">Excel & Python‑Powered Air Quality Dashboard</span>
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-3 font-header text-slate-900 dark:text-white uppercase tracking-tight">Air Quality Analysis & Insights Dashboard</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed flex-grow">EDA on 15k+ records using Pandas to identify global pollution trends and seasonal variances.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="flex gap-2">
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">Python Libraries</span>
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">EDA</span>
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">Data Analysis</span>
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">Data Visualization</span>
+                        </div>
+                        <a href="https://github.com/Geethika-pamidi" target="_blank" class="text-slate-900 dark:text-white hover:text-blue-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass rounded-[2.5rem] overflow-hidden group flex flex-col h-full hover:border-blue-500/50 transition-all duration-500">
+                <div class="h-52 overflow-hidden relative">
+                    <img src="cyber.png" alt="Cyber Threat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <span class="text-white text-xs font-bold uppercase tracking-widest">Web Security Monitoring</span>
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-3 font-header text-slate-900 dark:text-white uppercase tracking-tight">Real‑Time Security Analysis</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed flex-grow">A real-time monitoring web application designed to identify phishing attempts and suspicious system traffic.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="flex gap-2">
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">HTML</span>
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">CSS</span>
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">JavaScript</span>
+                        </div>
+                        <a href="https://github.com/Geethika-pamidi" target="_blank" class="text-slate-900 dark:text-white hover:text-blue-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass rounded-[2.5rem] overflow-hidden group flex flex-col h-full hover:border-blue-500/50 transition-all duration-500">
+                <div class="h-52 overflow-hidden relative">
+                    <img src="lms.jpg" alt="Library Mgmt" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <span class="text-white text-xs font-bold uppercase tracking-widest">Software Engineering</span>
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-3 font-header text-slate-900 dark:text-white uppercase tracking-tight">Library Management System</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed flex-grow">Robust C++ application utilizing Stacks and Queues for efficient data handling and inventory management.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="flex gap-2">
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">C++</span>
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">Stacks</span>
+                            <span class="text-[9px] font-bold bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full uppercase">Queues</span>
+                        </div>
+                        <a href="https://github.com/Geethika-pamidi" target="_blank" class="text-slate-900 dark:text-white hover:text-blue-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="certificates" class="py-24 px-6 max-w-7xl mx-auto border-t border-slate-200 dark:border-white/5">
+    <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold font-header uppercase tracking-tighter text-slate-900 dark:text-white">
+            Expert <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Credentials</span>
+        </h2>
+        <div class="h-1.5 w-20 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="glass p-8 rounded-[2rem] flex flex-col items-center text-center hover:border-blue-500/50 transition-all duration-500 group border border-transparent">
+            <div class="h-20 w-full flex items-center justify-center mb-6">
+                <img src="genai.png" alt="Tata" class="max-h-full object-contain filter dark:brightness-110 group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <h4 class="text-blue-600 dark:text-blue-400 font-bold text-sm mb-2">Tata Data Visualization</h4>
+            <p class="text-[9px] text-slate-400 mb-4 uppercase tracking-[0.2em] font-black">Issued Mar 2026</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-6 flex-grow">Empowering business with effective insights and GenAI powered analytics simulation.</p>
+            <a href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_miwz5QPSboYJipPD5_1772806422681_completion_certificate.pdf" target="_blank" class="w-full py-3 rounded-xl bg-blue-600/5 hover:bg-blue-600 hover:text-white border border-blue-600/10 text-[10px] font-black uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2">
+                Verify <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+        </div>
+
+        <div class="glass p-8 rounded-[2rem] flex flex-col items-center text-center hover:border-blue-500/50 transition-all duration-500 group border border-transparent">
+            <div class="h-20 w-full flex items-center justify-center mb-6">
+                <img src="Algo.png" alt="AlgoUniversity" class="max-h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <h4 class="text-blue-600 dark:text-blue-400 font-bold text-sm mb-2">Graph Camp</h4>
+            <p class="text-[9px] text-slate-400 mb-4 uppercase tracking-[0.2em] font-black">Issued Mar 2026</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-6 flex-grow">Intensive training on advanced Graph algorithms and complex implementation.</p>
+            <a href="https://d3uam8jk4sa4y4.cloudfront.net/static/certificates/graph_camp/pamidi-lakshmi-geethika.png" target="_blank" class="w-full py-3 rounded-xl bg-blue-600/5 hover:bg-blue-600 hover:text-white border border-blue-600/10 text-[10px] font-black uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2">
+                Verify <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+        </div>
+
+        <div class="glass p-8 rounded-[2rem] flex flex-col items-center text-center hover:border-blue-500/50 transition-all duration-500 group border border-transparent">
+            <div class="h-20 w-full flex items-center justify-center mb-6">
+                <img src="INFOSYS.png" alt="Infosys" class="max-h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <h4 class="text-blue-600 dark:text-blue-400 font-bold text-sm mb-2">GenAI & LLM</h4>
+            <p class="text-[9px] text-slate-400 mb-4 uppercase tracking-[0.2em] font-black">Issued Aug 2025</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-6 flex-grow">Mastery in Large Language Models and prompt engineering foundations.</p>
+            <a href="https://infyspringboard.onwingspan.com/web/en/app/profile/competency/certificate" target="_blank" class="w-full py-3 rounded-xl bg-blue-600/5 hover:bg-blue-600 hover:text-white border border-blue-600/10 text-[10px] font-black uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2">
+                Verify <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+        </div>
+
+        <div class="glass p-8 rounded-[2rem] flex flex-col items-center text-center hover:border-blue-500/50 transition-all duration-500 group border border-transparent">
+            <div class="h-20 w-full flex items-center justify-center mb-6">
+                <img src="operating sysytem.png" alt="IBM" class="max-h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <h4 class="text-blue-600 dark:text-blue-400 font-bold text-sm mb-2">Operating Systems</h4>
+            <p class="text-[9px] text-slate-400 mb-4 uppercase tracking-[0.2em] font-black">Issued Sep 2024</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-6 flex-grow">Study of process management, memory allocation, and kernel functions.</p>
+            <a href="https://www.linkedin.com/in/pamidi-geethika34/details/certifications/1763917726888/single-media-viewer/?profileId=ACoAAEXzi-sB45ktRCWVpq7cWUD6tkyPMk91CUA" target="_blank" class="w-full py-3 rounded-xl bg-blue-600/5 hover:bg-blue-600 hover:text-white border border-blue-600/10 text-[10px] font-black uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2">
+                Verify <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+    <section id="achievements" class="py-24 px-6 max-w-5xl mx-auto border-t border-slate-200 dark:border-white/5">
+    <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold font-header uppercase tracking-tighter text-slate-900 dark:text-white">
+            Milestones & <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Awards</span>
+        </h2>
+        <div class="h-1.5 w-20 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <div class="glass p-6 rounded-2xl flex items-center justify-between group hover:border-blue-500/30 transition-all duration-300 border border-transparent">
+    <div class="flex items-center gap-6">
+        <div class="w-16 h-16 bg-slate-100 dark:bg-white/5 rounded-xl flex items-center justify-center p-3">
+            <img src="leetcode.jpg" alt="Leetcode Logo" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div>
+            <h4 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-500 transition">Algorithmic Mastery: 100+ LeetCode Problems</h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Successfully solved 103+ problems, demonstrating consistent practice in data structures and optimized C++ implementation.</p>
+        </div>
+    </div>
+    <div class="flex items-center gap-4">
+        <div class="hidden sm:block text-right">
+            <p class="text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest bg-blue-500/10 px-4 py-2 rounded-full border border-blue-500/10">Oct 2025</p>
+        </div>
+        <a href="https://leetcode.com/u/pamidi_geethika/" target="_blank" class="text-slate-400 hover:text-blue-500 transition-colors">
+            <i data-lucide="external-link" class="w-5 h-5"></i>
+        </a>
+    </div>
+</div>
+
+    <div class="grid grid-cols-1 gap-4">
+        <div class="glass p-6 rounded-2xl flex items-center justify-between group hover:border-blue-500/30 transition-all duration-300 border border-transparent">
+            <div class="flex items-center gap-6">
+                <div class="w-16 h-16 bg-slate-100 dark:bg-white/5 rounded-xl flex items-center justify-center p-3">
+                    <img src="hackerank.png" alt="HackerRank Official Logo" class="w-full h-full object-contain">
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition">C++ Silver Badge – HackerRank</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Recognized for advanced problem-solving and algorithmic proficiency in C++.</p>
+                </div>
+            </div>
+            <div class="hidden sm:block text-right">
+                <p class="text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest bg-blue-600/10 px-4 py-2 rounded-full border border-blue-600/10">Feb 2025</p>
+            </div>
+        </div>
+
+        <div class="glass p-6 rounded-2xl flex items-center justify-between group hover:border-blue-500/30 transition-all duration-300 border border-transparent">
+            <div class="flex items-center gap-6">
+                <div class="w-16 h-16 bg-slate-100 dark:bg-white/5 rounded-xl flex items-center justify-center p-3">
+                    <img src="hackerank.png" alt="HackerRank Official Logo" class="w-full h-full object-contain">
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition">Python Silver Badge – HackerRank</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Awarded for mastering core Python concepts and data structure implementation.</p>
+                </div>
+            </div>
+            <div class="hidden sm:block text-right">
+                <p class="text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest bg-blue-600/10 px-4 py-2 rounded-full border border-blue-600/10">Dec 2023</p>
+            </div>
+        </div>
+
+        <div class="glass p-6 rounded-2xl flex items-center justify-between group hover:border-blue-500/30 transition-all duration-300 border border-transparent">
+            <div class="flex items-center gap-6">
+                <div class="w-16 h-16 bg-slate-100 dark:bg-white/5 rounded-xl flex items-center justify-center p-3 border border-slate-200 dark:border-white/10">
+                    <img src="coderush.png" alt="Newton School" class="w-full h-full object-contain">
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition">Global Rank 2721 in CodeRush</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Placed among top performers in the monthly competitive coding challenge by Newton School.</p>
+                </div>
+            </div>
+            <div class="hidden sm:block text-right">
+                <p class="text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest bg-blue-600/10 px-4 py-2 rounded-full border border-blue-600/10">Oct 2023</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="education" class="py-24 px-6 max-w-7xl mx-auto border-t border-slate-200 dark:border-white/5">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold font-header uppercase tracking-tighter text-slate-900 dark:text-white">
+                Academic <span class="text-blue-600">Foundation</span>
+            </h2>
+            <div class="h-1.5 w-20 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 dark:before:via-white/10 before:to-transparent">
+            
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-slate-900 text-blue-600 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors duration-500 group-hover:border-blue-500">
+                    <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path d="M12 10v2H0v-2h12Zm0-4v2H0V6h12Zm0-4v2H0V2h12Z"/></svg>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[45%] glass p-8 rounded-[2rem] hover:border-blue-500/50 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest">2023 – 2027</span>
+                        <span class="bg-blue-600/10 text-blue-600 px-3 py-1 rounded-full text-[9px] font-bold uppercase">Ongoing</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white font-header uppercase tracking-tight">Lovely Professional University</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium">B.Tech — Computer Science & Engineering · Punjab</p>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="bg-slate-100 dark:bg-white/5 px-4 py-2 rounded-xl">
+                            <p class="text-[9px] text-slate-400 uppercase font-bold tracking-tighter">Current CGPA</p>
+                            <p class="text-lg font-bold text-blue-600">7.0</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-slate-900 text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors duration-500 group-hover:border-blue-500">
+                    <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path d="M12 10v2H0v-2h12Zm0-4v2H0V6h12Zm0-4v2H0V2h12Z"/></svg>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[45%] glass p-8 rounded-[2rem] hover:border-blue-500/50 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">2021 – 2023</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white font-header uppercase tracking-tight">Bhashyam Junior College</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium">12th Standard · Andhra Pradesh</p>
+                    <div class="bg-slate-100 dark:bg-white/5 inline-block px-4 py-2 rounded-xl">
+                        <p class="text-[9px] text-slate-400 uppercase font-bold tracking-tighter">Score</p>
+                        <p class="text-lg font-bold text-slate-900 dark:text-white">90%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-slate-900 text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors duration-500 group-hover:border-blue-500">
+                    <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path d="M12 10v2H0v-2h12Zm0-4v2H0V6h12Zm0-4v2H0V2h12Z"/></svg>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[45%] glass p-8 rounded-[2rem] hover:border-blue-500/50 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">2020 – 2021</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white font-header uppercase tracking-tight">Sri Chaitanya School</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium">10th Standard · Andhra Pradesh</p>
+                    <div class="bg-slate-100 dark:bg-white/5 inline-block px-4 py-2 rounded-xl">
+                        <p class="text-[9px] text-slate-400 uppercase font-bold tracking-tighter">Grade</p>
+                        <p class="text-lg font-bold text-slate-900 dark:text-white">88%</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="contact" class="py-24 px-6 max-w-6xl mx-auto border-t border-slate-200 dark:border-white/5">
+    <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-extrabold font-header uppercase tracking-tighter text-slate-900 dark:text-white">
+            Let's <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Connect</span>
+        </h2>
+        <p class="text-slate-500 dark:text-slate-400 mt-4 font-medium">Have a project in mind or just want to say hi? My inbox is always open.</p>
+    </div>
+    
+    <div class="glass p-2 rounded-[3rem] overflow-hidden relative group">
+        <div class="absolute -right-24 -top-24 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px] group-hover:bg-blue-600/20 transition-all duration-700"></div>
+
+        <div class="bg-white/50 dark:bg-slate-900/40 backdrop-blur-md p-8 md:p-14 rounded-[2.8rem] grid grid-cols-1 lg:grid-cols-5 gap-16 relative z-10">
+            
+            <div class="lg:col-span-2 space-y-10">
+                <div class="group/item flex items-center gap-6">
+                    <div class="w-14 h-14 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-600 group-hover/item:scale-110 group-hover/item:bg-blue-600 group-hover/item:text-white transition-all duration-500">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400 uppercase font-black tracking-[0.2em] mb-1">Email Me</p>
+                        <a href="mailto:pamidigeethika16@gmail.com" class="text-slate-900 dark:text-white font-bold hover:text-blue-600 transition-colors">pamidigeethika16@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="group/item flex items-center gap-6">
+                    <div class="w-14 h-14 bg-purple-600/10 rounded-2xl flex items-center justify-center text-purple-600 group-hover/item:scale-110 group-hover/item:bg-purple-600 group-hover/item:text-white transition-all duration-500">
+                        <i data-lucide="phone" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400 uppercase font-black tracking-[0.2em] mb-1">Call Me</p>
+                        <p class="text-slate-900 dark:text-white font-bold">+91 8639163402</p>
+                    </div>
+                </div>
+
+                <div class="group/item flex items-center gap-6">
+                    <div class="w-14 h-14 bg-emerald-600/10 rounded-2xl flex items-center justify-center text-emerald-600 group-hover/item:scale-110 group-hover/item:bg-emerald-600 group-hover/item:text-white transition-all duration-500">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400 uppercase font-black tracking-[0.2em] mb-1">Location</p>
+                        <p class="text-slate-900 dark:text-white font-bold">Phagwara, Punjab</p>
+                    </div>
+                </div>
+
+                <div class="pt-8 flex gap-4">
+                   <a href="#" class="p-3 bg-slate-100 dark:bg-white/5 rounded-xl hover:text-blue-600 transition-colors border border-transparent hover:border-blue-500/20"><i data-lucide="linkedin"></i></a>
+                   <a href="#" class="p-3 bg-slate-100 dark:bg-white/5 rounded-xl hover:text-slate-900 dark:hover:text-white transition-colors border border-transparent hover:border-slate-500/20"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+
+            <form class="lg:col-span-3 space-y-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-slate-400 ml-4">Full Name</label>
+                        <input type="text" placeholder="John Doe" class="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 rounded-2xl px-6 py-4 text-sm outline-none transition-all dark:text-white">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-slate-400 ml-4">Email Address</label>
+                        <input type="email" placeholder="john@example.com" class="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 rounded-2xl px-6 py-4 text-sm outline-none transition-all dark:text-white">
+                    </div>
+                </div>
+                
+                <div class="space-y-2">
+                    <label class="text-[10px] font-bold uppercase text-slate-400 ml-4">Message</label>
+                    <textarea placeholder="Tell me about your project or opportunity..." rows="5" class="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 rounded-2xl px-6 py-4 text-sm outline-none transition-all dark:text-white"></textarea>
+                </div>
+
+                <button type="submit" class="w-full btn-primary py-5 rounded-2xl font-bold uppercase text-xs tracking-[0.2em] transition-all hover:shadow-2xl hover:shadow-blue-600/40 active:scale-95 flex items-center justify-center gap-3">
+                    Send Message
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <footer class="py-12 text-center border-t border-slate-200 dark:border-white/5">
+        <p class="text-slate-400 text-[10px] uppercase tracking-[0.3em] font-bold">
+            © 2026 Pamidi Geethika • Crafted for the Future
+        </p>
+    </footer>
+
+    <script>
+        // FIXED THEME TOGGLE SCRIPT
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Typewriter Effect
+        const target = document.getElementById('typewriter');
+        const phrases = ["Data Science Engineer", "ML Engineer", "Full Stack Developer"];
+        let pIndex = 0; let charIndex = 0; let isDeleting = false;
+
+        function type() {
+            const current = phrases[pIndex];
+            if (isDeleting) { target.textContent = current.substring(0, charIndex - 1); charIndex--; }
+            else { target.textContent = current.substring(0, charIndex + 1); charIndex++; }
+
+            if (!isDeleting && charIndex === current.length) { setTimeout(() => isDeleting = true, 2000); }
+            else if (isDeleting && charIndex === 0) { isDeleting = false; pIndex = (pIndex + 1) % phrases.length; }
+            setTimeout(type, isDeleting ? 80 : 150);
+        }
+        type();
+
+    </script>
+    
+
+</body>
+</html>
